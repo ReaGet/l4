@@ -1,0 +1,15 @@
+# Use root/example as user/password credentials
+version: '3.9'
+
+services:
+
+  db:
+    image: mariadb
+    container_name: db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/db:/var/lib/mysql
